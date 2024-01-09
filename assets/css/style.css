@@ -1,3 +1,46 @@
+.logo {
+  backdrop-filter: blur(10px);
+}
+.hero-grid {
+  display: grid;
+  position: relative;
+  margin-top: 3rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.hero-grid img:nth-child(1) {
+  height: 60%;
+  object-fit: cover;
+  border-radius: 200px 100px 3px 200px;
+}
+.hero-grid img:nth-child(2) {
+  height: 115%;
+  object-fit: cover;
+  border-radius: 15%;
+  border-bottom-left-radius: 3px;
+  transform: translateX(7%);
+}
+.hero-grid img:nth-child(3) {
+  height: 130%;
+  object-fit: cover;
+  border-radius: 20%;
+  border-top-right-radius: 3px;
+  transform: translateY(-25%);
+}
+
+.hero-grid img:nth-child(4) {
+  height: 75%;
+  border-radius: 30px;
+  border-top-left-radius: 3px;
+  transform: translate(7%, 30%);
+}
+.hero-btn {
+  transition: transform ease-in 300ms;
+}
+.hero-btn:hover {
+  transform: translateY(-5px);
+}
+/* Contact Page */
 .contact {
   padding-top: 8rem;
 }
@@ -6,4 +49,104 @@
   flex-direction: column;
   align-items: start;
   gap: 3rem;
+}
+
+/* Tours page */
+.tour-card {
+  min-height: 90dvh;
+}
+.tour-card:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.tour-title {
+  font-size: calc(1.3rem + 1.5vw);
+  margin-bottom: 3rem;
+}
+.tour-description {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.7;
+  max-width: 50ch;
+}
+
+.gallery {
+  --g: 6px; /* the gap */
+
+  display: grid;
+  grid: auto-flow 1fr / repeat(3, 1fr);
+  gap: var(--g);
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.gallery img:nth-child(2) {
+  grid-area: 1/2 / span 2 / span 2;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    calc(50% + var(--g) / 4) 100%,
+    0 calc(50% - var(--g) / 4)
+  );
+}
+.gallery img:nth-child(3) {
+  grid-area: 2/1 / span 2 / span 2;
+  clip-path: polygon(
+    0 0,
+    calc(50% - var(--g) / 4) 0,
+    100% calc(50% + var(--g) / 4),
+    100% 100%,
+    0 100%
+  );
+}
+
+.honeycomb {
+  --s: 150px; /* control the size */
+  --g: 10px; /* control the gap */
+  display: grid;
+  margin: calc(var(--s) + var(--g));
+}
+
+.honeycomb > img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1.15;
+  object-fit: cover;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: 0.2s linear;
+}
+.honeycomb > img:hover {
+  filter: grayscale(0);
+  z-index: 1;
+  --_t: 1.2;
+}
+
+.honeycomb > img:nth-child(1) {
+  --_y: calc(-100% - var(--g));
+}
+.honeycomb > img:nth-child(7) {
+  --_y: calc(100% + var(--g));
+}
+.honeycomb > img:nth-child(3),
+.honeycomb > img:nth-child(5) {
+  --_x: calc(-75% - 0.87 * var(--g));
+}
+.honeycomb > img:nth-child(4),
+.honeycomb > img:nth-child(6) {
+  --_x: calc(75% + 0.87 * var(--g));
+}
+.honeycomb > img:nth-child(3),
+.honeycomb > img:nth-child(4) {
+  --_y: calc(-50% - 0.5 * var(--g));
+}
+.honeycomb > img:nth-child(5),
+.honeycomb > img:nth-child(6) {
+  --_y: calc(50% + 0.5 * var(--g));
 }
