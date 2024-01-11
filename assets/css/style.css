@@ -1,5 +1,10 @@
+html,
+body {
+  overflow-x: hidden;
+}
 .logo {
   backdrop-filter: blur(10px);
+  height: 10%;
 }
 .hero-grid {
   display: grid;
@@ -40,6 +45,10 @@
 .hero-btn:hover {
   transform: translateY(-5px);
 }
+.travel-img {
+  max-width: 100%;
+  border-radius: 10px;
+}
 /* Contact Page */
 .contact {
   padding-top: 8rem;
@@ -51,6 +60,14 @@
   gap: 3rem;
 }
 
+.about-us {
+  max-width: 58ch;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-block: 1.2rem;
+  line-height: 2;
+  text-align: justify;
+}
 /* Tours page */
 .tour-card {
   min-height: 90dvh;
@@ -104,49 +121,7 @@
   );
 }
 
-.honeycomb {
-  --s: 150px; /* control the size */
-  --g: 10px; /* control the gap */
-  display: grid;
-  margin: calc(var(--s) + var(--g));
-}
-
-.honeycomb > img {
-  grid-area: 1/1;
-  width: var(--s);
-  aspect-ratio: 1.15;
-  object-fit: cover;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-  transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
-  cursor: pointer;
-  filter: grayscale(80%);
-  transition: 0.2s linear;
-}
-.honeycomb > img:hover {
-  filter: grayscale(0);
-  z-index: 1;
-  --_t: 1.2;
-}
-
-.honeycomb > img:nth-child(1) {
-  --_y: calc(-100% - var(--g));
-}
-.honeycomb > img:nth-child(7) {
-  --_y: calc(100% + var(--g));
-}
-.honeycomb > img:nth-child(3),
-.honeycomb > img:nth-child(5) {
-  --_x: calc(-75% - 0.87 * var(--g));
-}
-.honeycomb > img:nth-child(4),
-.honeycomb > img:nth-child(6) {
-  --_x: calc(75% + 0.87 * var(--g));
-}
-.honeycomb > img:nth-child(3),
-.honeycomb > img:nth-child(4) {
-  --_y: calc(-50% - 0.5 * var(--g));
-}
-.honeycomb > img:nth-child(5),
-.honeycomb > img:nth-child(6) {
-  --_y: calc(50% + 0.5 * var(--g));
+footer {
+  background-color: #fff1da;
+  padding-top: 4rem;
 }

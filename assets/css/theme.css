@@ -5423,21 +5423,41 @@ fieldset:disabled .btn {
 }
 
 .navbar-light .navbar-nav .nav-link {
+  position: relative;
   color: #212832;
 }
 
+.navbar-light .navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #f1a501;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
 .navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus {
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
   color: #f1a501;
+}
+
+.navbar-light .navbar-nav .nav-link:hover::before,
+.navbar-light .navbar-nav .nav-link:focus::before,
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link.active::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
   color: rgba(0, 0, 0, 0.25);
-}
-
-.navbar-light .navbar-nav .show > .nav-link,
-.navbar-light .navbar-nav .nav-link.active {
-  color: #f1a501;
 }
 
 .navbar-light .navbar-toggler {
@@ -19448,6 +19468,14 @@ iframe {
 .icon-item#facebook:focus {
   background-color: #3c5a99;
 }
+.icon-item#whatsapp {
+  background: #fffefe;
+}
+
+.icon-item#whatsapp:hover,
+.icon-item#whatsapp:focus {
+  background-color: #4caf50;
+}
 
 .icon-item#instagram {
   background: #fffefe;
@@ -19719,7 +19747,7 @@ iframe {
 }
 
 .padding-transition {
-  padding: 1.25rem !important;
+  padding: 1rem !important;
 }
 
 .show-onhover:hover .hideEl {
@@ -19924,7 +19952,7 @@ iframe {
 .hero-title {
   font-family: "Volkhov", "DM Serif Display", cursive;
   font-weight: 700;
-  font-size: calc(2rem + 0.8vw);
+  font-size: calc(2rem + 1vw);
   color: #181e4b;
   margin-bottom: 5px;
   position: relative;
@@ -19932,16 +19960,11 @@ iframe {
 }
 .hero-text {
   max-width: 50ch;
+  line-height: 2;
 }
 .hero-img {
   border-radius: 10px;
   width: 100%;
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .hero-img {
-    width: 135%;
-  }
 }
 
 .card {
@@ -19955,7 +19978,7 @@ iframe {
   bottom: 0.625rem;
   width: 6.25rem;
   height: 6.25rem;
-  background-color: #df6951;
+  background-color: #fff1da;
   border-radius: 1.875rem 0 0.625rem 0;
   z-index: -1;
   -webkit-transition: all 0.2s ease-in-out;
