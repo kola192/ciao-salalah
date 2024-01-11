@@ -71,6 +71,7 @@ body {
 /* Tours page */
 .tour-card {
   min-height: 90dvh;
+  margin-block: 4rem;
 }
 .tour-card:nth-child(odd) {
   flex-direction: row-reverse;
