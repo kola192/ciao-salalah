@@ -19952,9 +19952,9 @@ iframe {
 .hero-title {
   font-family: "Volkhov", "DM Serif Display", cursive;
   font-weight: 700;
-  font-size: calc(2rem + 1vw);
+  font-size: calc(2rem + 0.5vw);
   color: #181e4b;
-  margin-bottom: 5px;
+  word-wrap: break-word;
   position: relative;
   z-index: 1;
 }

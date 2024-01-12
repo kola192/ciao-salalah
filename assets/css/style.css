@@ -49,6 +49,7 @@ body {
   max-width: 100%;
   border-radius: 10px;
 }
+
 /* Contact Page */
 .contact {
   padding-top: 8rem;
@@ -78,7 +79,7 @@ body {
 }
 .tour-title {
   font-size: calc(1.3rem + 1.5vw);
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .tour-description {
   font-size: 1rem;
@@ -124,5 +125,10 @@ body {
 
 footer {
   background-color: #fff1da;
-  padding-top: 4rem;
+  padding-top: 3rem;
+}
+
+.company-text {
+  max-width: 35ch;
+  text-align: justify;
 }
