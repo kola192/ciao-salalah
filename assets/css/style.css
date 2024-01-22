@@ -132,3 +132,12 @@ footer {
   max-width: 35ch;
   text-align: left;
 }
+
+.floating-btn {
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  bottom: 30px;
+  right: 25px;
+  z-index: 5;
+}
