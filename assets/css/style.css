@@ -104,6 +104,9 @@ body {
 
 .gallery img:nth-child(2) {
   grid-area: 1/2 / span 2 / span 2;
+  transition: clip-path 0.1s ease-in-out;
+}
+.clipped2 {
   clip-path: polygon(
     0 0,
     100% 0,
@@ -114,6 +117,9 @@ body {
 }
 .gallery img:nth-child(3) {
   grid-area: 2/1 / span 2 / span 2;
+  transition: clip-path 0.1s ease-in-out;
+}
+.clipped3 {
   clip-path: polygon(
     0 0,
     calc(50% - var(--g) / 4) 0,
